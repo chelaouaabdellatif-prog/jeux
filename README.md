@@ -2,6 +2,8 @@
 
 Jeu de morpion (X et O) en ligne à deux joueurs. Crée une partie, envoie le lien à un ami, et jouez en temps réel.
 
+**Jouer :** https://xo-en-ligne.chelaouaabdellatif.workers.dev
+
 - Lien d'invitation (copier, partager, WhatsApp) ou code de partie
 - Temps réel via WebSocket
 - Score, matchs nuls, revanche (le premier joueur alterne)
