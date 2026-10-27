@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>X et O en ligne</title>
+  <meta name="description" content="Joue au morpion (X et O) en ligne avec un ami : crée une partie et envoie-lui le lien.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭕</text></svg>">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <h1><span class="x">X</span> <span class="amp">et</span> <span class="o">O</span></h1>
+      <p class="tagline">Le morpion en ligne entre amis</p>
+    </header>
+
+    <!-- Accueil -->
+    <section id="home" class="card" hidden>
+      <label class="field">
+        <span>Ton prénom</span>
+        <input id="name" maxlength="20" autocomplete="nickname" placeholder="Ex. Zak">
+      </label>
+      <button id="create" class="btn primary">Créer une partie</button>
+      <div class="divider"><span>ou</span></div>
+      <form id="join-form" class="join">
+        <input id="code" maxlength="12" placeholder="Code de la partie" autocapitalize="characters" spellcheck="false">
+        <button class="btn">Rejoindre</button>
+      </form>
+    </section>
+
+    <!-- Partie -->
+    <section id="game" hidden>
+      <div class="invite card" id="invite">
+        <p class="invite-title">Invite un ami avec ce lien</p>
+        <div class="invite-row">
+          <input id="link" readonly>
+          <button id="copy" class="btn small">Copier</button>
+        </div>
+        <div class="invite-actions">
+          <button id="share" class="btn small" hidden>Partager…</button>
+          <a id="whatsapp" class="btn small" target="_blank" rel="noopener">WhatsApp</a>
+          <span class="code-label">Code : <strong id="room-code"></strong></span>
+        </div>
+      </div>
+
+      <div class="players">
+        <div class="player" id="pX">
+          <span class="mark x">X</span>
+          <span class="pname">—</span>
+          <span class="dot"></span>
+          <span class="score">0</span>
+        </div>
+        <div class="draws">Nuls <strong id="draws">0</strong></div>
+        <div class="player" id="pO">
+          <span class="mark o">O</span>
+          <span class="pname">—</span>
+          <span class="dot"></span>
+          <span class="score">0</span>
+        </div>
+      </div>
+
+      <p id="status" class="status" aria-live="polite">Connexion…</p>
+
+      <div id="board" class="board" role="grid" aria-label="Plateau de jeu"></div>
+
+      <div class="actions">
+        <button id="rematch" class="btn primary" hidden>Rejouer</button>
+        <a href="/" class="btn ghost">Nouvelle partie</a>
+      </div>
+      <p id="spectators" class="muted"></p>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "xo-en-ligne",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Jeu X et O (morpion) en ligne à deux, avec lien d'invitation. Cloudflare Workers + Durable Objects.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
